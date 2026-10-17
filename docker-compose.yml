@@ -1,0 +1,22 @@
+# Ein Container, eine Datenbank-Datei, ein Bilder-Ordner.
+# Start lokal und auf dem Pi identisch:  docker compose up -d --build
+services:
+  app:
+    build: .
+    image: what-to-wear:latest
+    container_name: what-to-wear
+    restart: unless-stopped
+    ports:
+      - "${APP_PORT:-3000}:3000"
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      TZ: ${TZ:-Europe/Berlin}
+      # Begrenzt den Node-Speicher, damit es auch auf einem kleinen Pi stabil bleibt
+      NODE_OPTIONS: --max-old-space-size=384
+    volumes:
+      # Datenbank (app.db) und Bilder liegen hier im Projektordner unter ./data.
+      # Für ein Backup genau diesen Ordner sichern.
+      - ./data:/data
+    mem_limit: 768m

@@ -1,0 +1,12 @@
+node_modules/
+.next/
+out/
+next-env.d.ts
+*.tsbuildinfo
+
+# Laufzeitdaten: Datenbank und Bilder gehören nicht ins Repo
+data/
+
+.env
+.env.local
+.DS_Store

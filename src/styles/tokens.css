@@ -1,0 +1,96 @@
+/**
+ * Design Tokens
+ * ─────────────
+ * Die einzige Quelle für Farben, Abstände, Radien, Typo, Schatten und Motion.
+ * Komponenten verwenden NIE Rohwerte, sondern immer die Tailwind-Klassen,
+ * die in globals.css auf diese Variablen gemappt sind (z. B. bg-surface, rounded-card).
+ *
+ * Zwei Ebenen, wie im Design System üblich:
+ *   1. Primitives  (--ds-neutral-100 …)  rohe Werte, nur hier referenziert
+ *   2. Semantic    (--ds-color-surface …) Bedeutung, wird in der UI verwendet
+ * Alles trägt das Präfix --ds-, damit nichts mit Tailwinds eigenen Variablen kollidiert.
+ */
+:root {
+  /* ── 1. Primitives ─────────────────────────────── */
+  --ds-neutral-0: #ffffff;
+  --ds-neutral-50: #f7f7f8;
+  --ds-neutral-100: #f0f0f2;
+  --ds-neutral-200: #e5e5ea;
+  --ds-neutral-300: #d1d1d6;
+  --ds-neutral-500: #8e8e93;
+  --ds-neutral-600: #6c6c70;
+  --ds-neutral-900: #1c1c1e;
+  --ds-neutral-1000: #000000;
+
+  --ds-green-600: #2f8f4e;
+  --ds-red-600: #c4363b;
+
+  /* ── 2. Semantic: Farbe ────────────────────────── */
+  --ds-color-page: var(--ds-neutral-0); /* Seitenhintergrund */
+  --ds-color-surface: var(--ds-neutral-0); /* Karten, Sheets */
+  --ds-color-surface-sunken: var(--ds-neutral-50); /* Collage-Karten, Inputs */
+  --ds-color-surface-pressed: var(--ds-neutral-100);
+
+  --ds-color-text-primary: var(--ds-neutral-900);
+  --ds-color-text-secondary: var(--ds-neutral-600);
+  --ds-color-text-tertiary: var(--ds-neutral-500);
+
+  --ds-color-border-subtle: var(--ds-neutral-200);
+  --ds-color-border-strong: var(--ds-neutral-300);
+
+  --ds-color-action: var(--ds-neutral-1000); /* Primär-Button, Auswahl */
+  --ds-color-on-action: var(--ds-neutral-0);
+
+  --ds-color-positive: var(--ds-green-600);
+  --ds-color-negative: var(--ds-red-600);
+
+  /* ── Spacing (4er-Raster) ──────────────────────── */
+  --ds-space-unit: 4px; /* Basis: p-1 = 4px, p-4 = 16px usw. */
+  --ds-space-gutter: 16px; /* Seitenrand links/rechts */
+  --ds-space-section: 24px; /* Abstand zwischen Abschnitten */
+
+  /* ── Radius ────────────────────────────────────── */
+  --ds-radius-sm: 8px;
+  --ds-radius-md: 12px;
+  --ds-radius-card: 16px;
+  --ds-radius-sheet: 24px;
+  --ds-radius-full: 9999px;
+
+  /* ── Typografie ────────────────────────────────── */
+  /* System-Schrift: auf dem iPhone SF Pro, wie in der Referenz. Kein Webfont-Download. */
+  --ds-font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, "Helvetica Neue", Arial,
+    sans-serif;
+
+  --ds-text-caption: 12px;
+  --ds-text-caption-lh: 16px;
+  --ds-text-footnote: 13px;
+  --ds-text-footnote-lh: 18px;
+  --ds-text-body: 17px;
+  --ds-text-body-lh: 22px;
+  --ds-text-headline: 17px; /* wie body, aber semibold */
+  --ds-text-headline-lh: 22px;
+  --ds-text-title: 22px;
+  --ds-text-title-lh: 28px;
+  --ds-text-large-title: 32px;
+  --ds-text-large-title-lh: 38px;
+
+  --ds-weight-regular: 400;
+  --ds-weight-medium: 500;
+  --ds-weight-semibold: 600;
+  --ds-weight-bold: 700;
+
+  /* ── Schatten ──────────────────────────────────── */
+  --ds-shadow-card: 0 1px 2px rgb(0 0 0 / 0.04), 0 2px 8px rgb(0 0 0 / 0.04);
+  --ds-shadow-raised: 0 4px 24px rgb(0 0 0 / 0.08);
+
+  /* ── Motion ────────────────────────────────────── */
+  --ds-duration-fast: 120ms;
+  --ds-duration-base: 200ms;
+  --ds-ease-standard: cubic-bezier(0.2, 0, 0, 1);
+
+  /* ── Layout ────────────────────────────────────── */
+  --ds-layout-max-width: 520px; /* Auf dem Desktop bleibt die App handybreit */
+  --ds-tabbar-height: 56px;
+  --ds-touch-target: 44px; /* Mindestgröße für Tap-Flächen (Apple HIG) */
+  --ds-collage-aspect: 3 / 4; /* Seitenverhältnis einer Collage-Karte */
+}

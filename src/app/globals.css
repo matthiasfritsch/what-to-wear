@@ -1,0 +1,86 @@
+@import "tailwindcss";
+@import "../styles/tokens.css";
+
+/**
+ * Mapping: Design Tokens -> Tailwind-Klassen.
+ * `initial` löscht Tailwinds Standardpaletten. Eine Klasse wie bg-red-500 oder
+ * rounded-xl existiert dadurch gar nicht erst, es gehen nur unsere Tokens.
+ */
+@theme inline {
+  --color-*: initial;
+  --color-page: var(--ds-color-page);
+  --color-surface: var(--ds-color-surface);
+  --color-surface-sunken: var(--ds-color-surface-sunken);
+  --color-surface-pressed: var(--ds-color-surface-pressed);
+  --color-primary: var(--ds-color-text-primary);
+  --color-secondary: var(--ds-color-text-secondary);
+  --color-tertiary: var(--ds-color-text-tertiary);
+  --color-subtle: var(--ds-color-border-subtle);
+  --color-strong: var(--ds-color-border-strong);
+  --color-action: var(--ds-color-action);
+  --color-on-action: var(--ds-color-on-action);
+  --color-positive: var(--ds-color-positive);
+  --color-negative: var(--ds-color-negative);
+  --color-transparent: transparent;
+  --color-current: currentColor;
+
+  --spacing: var(--ds-space-unit);
+  --spacing-gutter: var(--ds-space-gutter);
+  --spacing-section: var(--ds-space-section);
+  --spacing-tabbar: var(--ds-tabbar-height);
+  --spacing-touch: var(--ds-touch-target);
+
+  --radius-*: initial;
+  --radius-sm: var(--ds-radius-sm);
+  --radius-md: var(--ds-radius-md);
+  --radius-card: var(--ds-radius-card);
+  --radius-sheet: var(--ds-radius-sheet);
+  --radius-full: var(--ds-radius-full);
+
+  --font-*: initial;
+  --font-sans: var(--ds-font-sans);
+
+  --text-*: initial;
+  --text-caption: var(--ds-text-caption);
+  --text-caption--line-height: var(--ds-text-caption-lh);
+  --text-footnote: var(--ds-text-footnote);
+  --text-footnote--line-height: var(--ds-text-footnote-lh);
+  --text-body: var(--ds-text-body);
+  --text-body--line-height: var(--ds-text-body-lh);
+  --text-headline: var(--ds-text-headline);
+  --text-headline--line-height: var(--ds-text-headline-lh);
+  --text-headline--font-weight: var(--ds-weight-semibold);
+  --text-title: var(--ds-text-title);
+  --text-title--line-height: var(--ds-text-title-lh);
+  --text-large-title: var(--ds-text-large-title);
+  --text-large-title--line-height: var(--ds-text-large-title-lh);
+
+  --font-weight-*: initial;
+  --font-weight-regular: var(--ds-weight-regular);
+  --font-weight-medium: var(--ds-weight-medium);
+  --font-weight-semibold: var(--ds-weight-semibold);
+  --font-weight-bold: var(--ds-weight-bold);
+
+  --shadow-*: initial;
+  --shadow-card: var(--ds-shadow-card);
+  --shadow-raised: var(--ds-shadow-raised);
+
+  --ease-standard: var(--ds-ease-standard);
+  --container-app: var(--ds-layout-max-width);
+  --aspect-collage: var(--ds-collage-aspect);
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    background: var(--ds-color-page);
+    color: var(--ds-color-text-primary);
+    font-family: var(--ds-font-sans);
+    font-size: var(--ds-text-body);
+    line-height: var(--ds-text-body-lh);
+    -webkit-font-smoothing: antialiased;
+  }
+}
